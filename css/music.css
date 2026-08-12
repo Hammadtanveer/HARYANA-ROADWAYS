@@ -1,0 +1,166 @@
+/* ============================================
+   MUSIC — The Sound Section + Playlist
+   Haryana Roadways · Liquid Glass
+   ============================================ */
+
+
+/* ── Playlist Filters Bar ───────────────────── */
+
+.playlist-filters {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  margin-bottom: var(--space-6);
+  max-width: 100%;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+
+.playlist-filters::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.playlist-filter {
+  font-family: var(--font-body);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--grey-400);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  transition: 
+    color var(--dur-micro) var(--ease-out),
+    background var(--dur-micro) var(--ease-out);
+}
+
+.playlist-filter:hover {
+  color: var(--white);
+  background: var(--glass-white-06);
+}
+
+.playlist-filter.active {
+  color: var(--white);
+  background: var(--glass-white-12);
+  box-shadow: var(--glass-shadow-sm);
+}
+
+
+/* ── Playlist Container ─────────────────────── */
+
+.playlist {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+
+/* ── Playlist Track Row ─────────────────────── */
+
+.playlist__track {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  position: relative;
+}
+
+.playlist__track .type-track-number {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.playlist__info {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.playlist__info .type-track-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playlist__info .type-track-artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playlist__track .type-track-duration {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+
+/* ── Active Track Progress ──────────────────── */
+
+.playlist__progress {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1px;
+  margin-top: var(--space-3);
+  overflow: hidden;
+}
+
+.playlist__progress-bar {
+  height: 100%;
+  background: var(--green-muted);
+  border-radius: 1px;
+  transition: width 0.3s linear;
+}
+
+
+/* ── Active Track Styles ────────────────────── */
+
+.playlist__track.active {
+  background: var(--glass-white-08);
+  border-color: var(--glass-border);
+}
+
+.playlist__track.active .type-track-number {
+  color: var(--green-muted);
+}
+
+.playlist__track.active .type-track-title {
+  color: var(--white);
+}
+
+/* Hover */
+.playlist__track:hover .type-track-title {
+  color: var(--white);
+}
+
+.playlist__track:hover .type-track-number {
+  color: var(--grey-400);
+}
+
+
+/* ── Responsive Playlist ────────────────────── */
+
+@media (max-width: 768px) {
+  .playlist {
+    max-width: 100%;
+  }
+
+  .playlist__track {
+    grid-template-columns: 24px 1fr auto;
+    gap: 0 var(--space-3);
+    padding: var(--space-3);
+  }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Haryana Roadways — A cinematic experience. Raste. Raftaar. Haryana. Experience the iconic green buses of Haryana like never before.">
+  <meta name="theme-color" content="#0A0A0A">
+  <title>Haryana Roadways — Raste. Raftaar. Haryana.</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/journey.css">
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="assets/hero-bus.jpg">
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- ARIA Live Region for Player -->
+  <div id="player-status" class="aria-live" aria-live="polite" aria-atomic="true"></div>
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION — Floating Glass Pill
+       ═══════════════════════════════════════════ -->
+
+  <nav class="nav glass-pill glass-edge-light" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav__brand" aria-label="Haryana Roadways — scroll to top">HARYANA ROADWAYS</a>
+    <div class="nav__spacer"></div>
+    <div class="nav__links">
+      <a href="#journey" class="nav__link nav__link--desktop" data-section="journey" tabindex="0">The Journey</a>
+      <a href="#songs" class="nav__link nav__link--desktop" data-section="songs" tabindex="0">All Songs</a>
+      <button class="nav__menu-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="fullscreen-menu">
+        MENU
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       FULLSCREEN MENU
+       ═══════════════════════════════════════════ -->
+
+  <div class="menu glass-menu" id="fullscreen-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+    <button class="menu__close glass-button glass-edge-light" id="menu-close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="menu__content">
+      <a href="#hero" class="menu__item glass-row" data-menu-section="hero">
+        <span class="menu__number type-section-number">01</span>
+        <span class="menu__dash">—</span>
+        <span class="menu__label type-heading">THE RIDE</span>
+      </a>
+      <a href="#journey" class="menu__item glass-row" data-menu-section="journey">
+        <span class="menu__number type-section-number">02</span>
+        <span class="menu__dash">—</span>
+        <span class="menu__label type-heading">THE JOURNEY</span>
+      </a>
+      <a href="#songs" class="menu__item glass-row" data-menu-section="songs">
+        <span class="menu__number type-section-number">03</span>
+        <span class="menu__dash">—</span>
+        <span class="menu__label type-heading">सारे गाने</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════ -->
+
+  <main id="main-content">
+
+
+    <!-- ─── HERO ─────────────────────────────── -->
+
+    <section class="hero" data-section-id="hero" aria-label="Hero">
+      <!-- Background Image -->
+      <div class="hero__media">
+        <img src="assets/hero-bus.jpg" alt="A Haryana Roadways green and cream bus driving on a wide highway at golden hour, dust rising behind it under a dramatic sky" loading="eager">
+      </div>
+
+      <!-- Gradient Overlay -->
+      <div class="hero__overlay hero__overlay--gradient"></div>
+
+      <!-- Content -->
+      <div class="hero__content" style="padding-bottom: var(--space-8);">
+        <span class="hero__label type-label" style="font-weight: 800; color: var(--green-muted); letter-spacing: 0.2em;">जय हरियाणा • JAI HARYANA</span>
+        <h1 class="hero__title type-hero text-shadow-cinematic">
+          <span class="line">RASTE.</span>
+          <span class="line">RAFTAAR.</span>
+          <span class="line">HARYANA.</span>
+        </h1>
+        <div class="hero__tagline" style="font-family: var(--font-body); font-size: 16px; font-weight: 900; letter-spacing: 0.15em; color: var(--cream); margin-top: var(--space-3); margin-bottom: var(--space-4); text-transform: uppercase; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+          JAI HARYANA • जय हरियाणा
+        </div>
+        <p class="hero__subtitle type-body-lg" style="color: var(--grey-300); margin-bottom: var(--space-5);">
+          The iconic green machines of Haryana — cutting through dust, highway, and time. This is not a website. This is a cinematic ride.
+        </p>
+        
+        <div class="hero__cta" style="margin-bottom: var(--space-5);">
+          <a href="#journey" class="hero__cta-btn glass-button glass-edge-light" data-section="journey">
+            ENTER THE JOURNEY
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Centered Deluxe Saloon Style Glass Player Pill -->
+        <div style="display: flex; justify-content: center; width: 100%; margin-top: var(--space-4); margin-bottom: var(--space-4);">
+          <div class="custom-player glass-player glass-edge-light" id="custom-player">
+            <!-- Left: Cover Art -->
+            <div class="player__art-wrapper">
+              <img class="player__art" id="player-art" src="https://img.youtube.com/vi/-EqcIg6EA1c/hqdefault.jpg" alt="Cover Art">
+            </div>
+            
+            <!-- Middle-Left: Info & Progress -->
+            <div class="player__meta-progress">
+              <div class="player__info">
+                <span class="player__title" id="player-title">Haryanvi Hits</span>
+                <span class="player__artist" id="player-artist">Roadways radio</span>
+              </div>
+              <div class="player__progress-block">
+                <input type="range" class="player__slider" id="player-progress" min="0" max="100" value="0">
+                <span class="player__time" id="player-time">0:00 / 0:00</span>
+              </div>
+            </div>
+
+            <!-- Middle: Audio Controls -->
+            <div class="player__controls">
+              <button class="player__btn player__btn--prev" id="player-prev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px; height:16px;"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </button>
+              <button class="player__btn player__btn--play" id="player-play" aria-label="Play">
+                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" id="custom-play-icon" style="width:18px; height:18px; margin-left: 2px;"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+                <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" id="custom-pause-icon" style="display:none; width:18px; height:18px;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+              </button>
+              <button class="player__btn player__btn--next" id="player-next" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px; height:16px;"><path d="M6 18l8.5-6L6 6zm9-12h2v12h-2z"/></svg>
+              </button>
+            </div>
+
+            <!-- Right: Volume -->
+            <div class="player__volume">
+              <button class="player__volume-btn" id="player-mute" aria-label="Mute">
+                <svg id="custom-volume-icon" viewBox="0 0 24 24" fill="currentColor" style="width:16px; height:16px;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                <svg id="custom-mute-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none; width:16px; height:16px;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              </button>
+              <input type="range" class="player__slider player__slider--volume" id="player-volume" min="0" max="100" value="70">
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden YouTube Player Div for API Target -->
+        <div id="youtube-player" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;"></div>
+      </div>
+
+      <!-- Scroll Cue -->
+      <div class="scroll-cue" aria-hidden="true">
+        <span class="scroll-cue__text">Scroll</span>
+        <svg class="scroll-cue__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ─── THE JOURNEY ──────────────────────── -->
+
+    <section class="section section--auto journey-section" data-section-id="journey" aria-label="The Journey" style="background: var(--charcoal); padding: var(--space-10) 0;">
+      <div class="section__content reveal" style="padding-bottom: var(--space-7);">
+        <span class="type-label" style="margin-bottom: var(--space-5); display: block;">02 — The Roads</span>
+        <h2 class="type-section" style="margin-bottom: var(--space-6);">THE JOURNEY</h2>
+        <p class="type-body-lg" style="margin-bottom: var(--space-8);">
+          From the heartland to the capital. Every route is a story, every stop a memory.
+        </p>
+      </div>
+
+      <!-- Route Controller -->
+      <div class="section__content reveal">
+        <div class="glass-regular glass-edge-light journey__controller" style="padding: var(--space-7); max-width: 700px; margin-bottom: var(--space-8);">
+          <span class="type-label" style="margin-bottom: var(--space-5); display: block;">Haryana Journey</span>
+          
+          <!-- Route SVG -->
+          <div class="journey__route" id="journey-route">
+            <svg viewBox="0 0 600 100" class="journey__svg" aria-label="Route map from Rohtak to Chandigarh">
+              <!-- Route Line -->
+              <line x1="40" y1="50" x2="560" y2="50" stroke="rgba(255,255,255,0.12)" stroke-width="2" stroke-dasharray="4 4"/>
+              
+              <!-- Progress Line (filled by JS) -->
+              <line x1="40" y1="50" x2="40" y2="50" stroke="#2D9B58" stroke-width="2" class="journey__progress-line" id="journey-progress"/>
+
+              <!-- Stops -->
+              <circle cx="40"  cy="50" r="6" fill="#1B6B3A" stroke="#2D9B58" stroke-width="2" class="journey__stop"/>
+              <circle cx="213" cy="50" r="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2" class="journey__stop"/>
+              <circle cx="386" cy="50" r="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2" class="journey__stop"/>
+              <circle cx="560" cy="50" r="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2" class="journey__stop"/>
+
+              <!-- Bus Marker -->
+              <circle cx="40" cy="50" r="10" fill="#2D9B58" opacity="0.3" class="journey__marker-glow" id="journey-marker-glow"/>
+              <circle cx="40" cy="50" r="5" fill="#2D9B58" class="journey__marker" id="journey-marker"/>
+
+              <!-- City Labels -->
+              <text x="40"  y="82" fill="#A3A3A3" font-family="Inter, sans-serif" font-size="11" font-weight="500" text-anchor="middle" letter-spacing="0.06em">ROHTAK</text>
+              <text x="213" y="82" fill="#A3A3A3" font-family="Inter, sans-serif" font-size="11" font-weight="500" text-anchor="middle" letter-spacing="0.06em">HISAR</text>
+              <text x="386" y="82" fill="#A3A3A3" font-family="Inter, sans-serif" font-size="11" font-weight="500" text-anchor="middle" letter-spacing="0.06em">SIRSA</text>
+              <text x="560" y="82" fill="#A3A3A3" font-family="Inter, sans-serif" font-size="11" font-weight="500" text-anchor="middle" letter-spacing="0.06em">CHANDIGARH</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── ALL SONGS (सारे गाने) ──────────────── -->
+
+    <section class="section section--auto songs-section" data-section-id="songs" id="songs" aria-label="All Songs" style="background: #1C1A17; padding: var(--space-10) 0; border-top: 1px solid var(--grey-900);">
+      <div class="section__content reveal" style="padding-bottom: var(--space-6); text-align: left; max-width: var(--content-max-width); margin: 0 auto; padding-left: var(--section-padding-x); padding-right: var(--section-padding-x);">
+        <span class="type-label" style="margin-bottom: var(--space-3); display: block; color: var(--grey-400);">9 RECORDS</span>
+        <h2 class="type-hero text-shadow-cinematic" style="font-family: var(--font-heading); font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; line-height: 1; margin-bottom: var(--space-2); color: var(--white);">सारे गाने</h2>
+        <span class="type-label" style="display: block; font-size: 14px; margin-bottom: var(--space-4); letter-spacing: var(--tracking-wider); color: var(--green-muted);">ALL SONGS</span>
+        <p class="type-body-lg" style="color: var(--grey-400); max-width: 60ch; line-height: 1.6;">
+          9 handpicked Haryanvi hits, from Raju Punjabi to Sapna Chaudhary. Click any song to play instantly on the Roadways radio.
+        </p>
+        
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: var(--space-6); margin-bottom: var(--space-6);">
+
+        <!-- Songs List Container -->
+        <div class="songs-list" id="songs-list-container" style="display: flex; flex-direction: column;">
+          <!-- Items will be populated dynamically by JavaScript to match the playlist array exactly! -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── FOOTER (Custom Deluxe Saloon Style) ─── -->
+
+    <footer class="footer" aria-label="Footer" style="background: var(--black); padding: var(--space-9) var(--section-padding-x); border-top: 1px solid var(--grey-800);">
+      <div class="footer__content" style="max-width: var(--content-max-width); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-8); text-align: left;">
+        
+        <!-- Left Column -->
+        <div class="footer__details">
+          <div class="footer__brand-block" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <div class="footer__logo glass-button" style="width: 40px; height: 40px; border-radius: var(--radius-round); display: flex; align-items: center; justify-content: center; padding: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--green-muted);">
+                <rect x="2" y="10" width="20" height="8" rx="2" ry="2"></rect>
+                <path d="M7 22 L7 18 M17 22 L17 18"></path>
+                <path d="M2 14 L22 14"></path>
+                <circle cx="6" cy="18" r="2"></circle>
+                <circle cx="18" cy="18" r="2"></circle>
+              </svg>
+            </div>
+            <div>
+              <span class="type-heading" style="display: block; font-size: 16px; font-weight: var(--weight-bold); letter-spacing: var(--tracking-wide); color: var(--white);">हरियाणा रोडवेज</span>
+              <span class="type-micro" style="color: var(--cream); font-weight: var(--weight-semibold);">HARYANA ROADWAYS</span>
+            </div>
+          </div>
+          
+          <p class="type-body" style="color: var(--grey-400); max-width: 45ch; margin-bottom: var(--space-5); line-height: 1.5;">
+            Haryanvi hip-hop, street drill, and aggressive beats playing live. Experiencing the iconic green machines of Haryana like never before.
+          </p>
+          
+          <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+            <a href="https://x.com/Hammadkhan_9" target="_blank" rel="noopener noreferrer" class="glass-button" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border-radius: var(--radius-pill); font-size: var(--type-micro); font-weight: var(--weight-semibold); text-transform: uppercase;">
+              built by <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @Hammadkhan_9
+            </a>
+            <a href="https://github.com/Hammadtanveer" target="_blank" rel="noopener noreferrer" class="glass-button" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border-radius: var(--radius-pill); font-size: var(--type-micro); font-weight: var(--weight-semibold); text-transform: uppercase;">
+              GitHub <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> @Hammadtanveer
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="footer__rotations" style="display: flex; flex-direction: column; justify-content: flex-end;">
+          <div class="footer__text-links" style="font-size: var(--type-micro); line-height: 1.6; color: var(--grey-500);">
+            <p style="margin-bottom: var(--space-3);">
+              Audio is streamed through YouTube's embedded player; all rights remain with the respective labels, composers and performers. Nothing is hosted here.
+            </p>
+            <p style="margin-bottom: var(--space-3);">
+              The station is free and stays free. All credit goes to the respective singers and YouTube for streaming.
+            </p>
+            <p>
+              Hold rights to something here and want it removed? Email 
+              <a href="mailto:hammadtanveer247@gmail.com" class="type-cream" style="text-decoration: underline;">hammadtanveer247@gmail.com</a> and it comes down.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════ -->
+
+  <script src="js/nav.js"></script>
+  <script src="js/glass.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/journey.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

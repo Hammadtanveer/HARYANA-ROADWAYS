@@ -1,0 +1,239 @@
+/* ============================================
+   ACCESSIBILITY — Inclusive Design Layer
+   Haryana Roadways · Liquid Glass
+   ============================================
+   Reduced motion, focus states, contrast
+   backing, skip link, @supports fallbacks.
+   ============================================ */
+
+
+/* ── Skip Link ──────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 999;
+  padding: var(--space-3) var(--space-5);
+  background: var(--green-deep);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--type-caption);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: top var(--dur-normal) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+
+/* ── Focus-Visible States ───────────────────── 
+   Green ring on keyboard focus.
+   Only visible on keyboard navigation,
+   not on mouse click. */
+
+:focus-visible {
+  outline: 2px solid var(--green-muted);
+  outline-offset: 3px;
+}
+
+/* Remove default outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Glass-specific focus — ring sits outside the glass border */
+.glass-button:focus-visible,
+.glass-pill:focus-visible,
+.glass-row:focus-visible,
+.glass-interactive:focus-visible {
+  outline: 2px solid var(--green-muted);
+  outline-offset: 3px;
+}
+
+/* Nav link focus */
+.nav__link:focus-visible {
+  outline: 2px solid var(--green-muted);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ── Contrast Backing ───────────────────────── 
+   Dark layer behind glass text to ensure
+   minimum 4.5:1 contrast ratio. */
+
+.contrast-backing {
+  position: relative;
+}
+
+.contrast-backing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+/* ── Reduced Motion ─────────────────────────── 
+   Disables parallax, Ken Burns, scroll 
+   animations, cursor effects. Keeps simple
+   opacity fades only. */
+
+@media (prefers-reduced-motion: reduce) {
+  
+  /* Kill all animations and limit transitions */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.15s !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable Ken Burns zoom on hero */
+  .hero__media {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Disable parallax */
+  .parallax {
+    transform: none !important;
+  }
+
+  /* Disable edge lighting cursor effects */
+  .glass-edge-light::after {
+    display: none !important;
+  }
+
+  /* Disable scroll-driven reveals (show everything) */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable gallery crossfade animation */
+  .gallery__slide {
+    transition-duration: 0.15s !important;
+  }
+
+  /* Disable route marker animation */
+  .journey__marker {
+    transition-duration: 0.15s !important;
+  }
+
+  /* Disable menu stagger */
+  .menu__item {
+    transition-delay: 0ms !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable player button scale */
+  .glass-button:hover {
+    transform: none !important;
+  }
+
+  .glass-button:active {
+    transform: none !important;
+  }
+}
+
+
+/* ── High Contrast Mode ─────────────────────── */
+
+@media (prefers-contrast: high) {
+  
+  .glass-clear,
+  .glass-regular,
+  .glass-pill,
+  .glass-player,
+  .glass-card {
+    background: rgba(20, 20, 20, 0.95);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-button {
+    background: rgba(30, 30, 30, 0.95);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .type-body,
+  .type-body-lg {
+    color: var(--white);
+  }
+
+  .type-caption,
+  .type-micro {
+    color: var(--grey-300);
+  }
+}
+
+
+/* ── Screen Reader Only ─────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* ── ARIA Live Region (player state) ────────── */
+
+.aria-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+
+/* ── Visible Focus for Touch Devices ────────── */
+
+@media (hover: none) and (pointer: coarse) {
+  
+  /* Larger touch targets */
+  .glass-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .glass-row {
+    min-height: 44px;
+  }
+
+  .nav__link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Remove hover-dependent effects on touch */
+  .glass-button:hover {
+    transform: none;
+    background: var(--glass-white-08);
+    border-color: var(--glass-border);
+  }
+
+  .glass-edge-light::after {
+    display: none;
+  }
+}

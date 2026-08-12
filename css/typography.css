@@ -1,0 +1,264 @@
+/* ============================================
+   TYPOGRAPHY — Editorial Type System
+   Haryana Roadways · Liquid Glass
+   ============================================ */
+
+
+/* ── Google Fonts Import ────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+
+/* ── Base Typography ────────────────────────── */
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-loose);
+  color: var(--grey-200);
+  letter-spacing: 0;
+}
+
+
+/* ── Heading Classes ────────────────────────── */
+
+.type-hero {
+  font-family: var(--font-heading);
+  font-size: var(--type-hero);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.type-section {
+  font-family: var(--font-heading);
+  font-size: var(--type-section);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.type-heading {
+  font-family: var(--font-heading);
+  font-size: var(--type-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.type-subheading {
+  font-family: var(--font-heading);
+  font-size: var(--type-subheading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--grey-200);
+  text-transform: uppercase;
+}
+
+
+/* ── Body Classes ───────────────────────────── */
+
+.type-body-lg {
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-loose);
+  color: var(--grey-300);
+  max-width: 65ch;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-loose);
+  color: var(--grey-400);
+  max-width: 65ch;
+}
+
+
+/* ── UI / Metadata Classes ──────────────────── */
+
+.type-caption {
+  font-family: var(--font-body);
+  font-size: var(--type-caption);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-wide);
+  color: var(--grey-400);
+  text-transform: uppercase;
+}
+
+.type-micro {
+  font-family: var(--font-body);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-wider);
+  color: var(--grey-500);
+  text-transform: uppercase;
+}
+
+.type-mono {
+  font-family: var(--font-mono);
+  font-size: var(--type-caption);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-wide);
+  color: var(--grey-400);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ── Label / Tag ────────────────────────────── */
+
+.type-label {
+  font-family: var(--font-body);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--green-muted);
+  text-transform: uppercase;
+}
+
+.type-now-playing {
+  font-family: var(--font-body);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--grey-400);
+  text-transform: uppercase;
+}
+
+
+/* ── Track / Playlist Typography ────────────── */
+
+.type-track-title {
+  font-family: var(--font-heading);
+  font-size: var(--type-body);
+  font-weight: var(--weight-bold);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-normal);
+}
+
+.type-track-artist {
+  font-family: var(--font-body);
+  font-size: var(--type-caption);
+  font-weight: var(--weight-regular);
+  color: var(--grey-400);
+}
+
+.type-track-number {
+  font-family: var(--font-mono);
+  font-size: var(--type-caption);
+  font-weight: var(--weight-regular);
+  color: var(--grey-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.type-track-duration {
+  font-family: var(--font-mono);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-regular);
+  color: var(--grey-500);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ── Section Number (01, 02, ...) ───────────── */
+
+.type-section-number {
+  font-family: var(--font-mono);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-regular);
+  color: var(--grey-600);
+  letter-spacing: var(--tracking-wider);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ── Cream Accent Text ──────────────────────── */
+
+.type-cream {
+  color: var(--cream);
+}
+
+.type-cream-muted {
+  color: var(--cream-muted);
+}
+
+
+/* ── Green Accent Text ──────────────────────── */
+
+.type-green {
+  color: var(--green-muted);
+}
+
+.type-green-deep {
+  color: var(--green-deep);
+}
+
+
+/* ── Text Utilities ─────────────────────────── */
+
+.text-left {
+  text-align: left;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--white) 0%, var(--grey-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-shadow-cinematic {
+  text-shadow: 
+    0 2px 20px rgba(0, 0, 0, 0.5),
+    0 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 30px rgba(45, 155, 88, 0.3);
+}
+
+
+/* ── Responsive Typography Adjustments ──────── */
+
+@media (max-width: 768px) {
+  .type-hero {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .type-section {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .type-heading {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .type-body-lg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .type-hero {
+    font-size: 2.25rem;
+  }
+
+  .type-section {
+    font-size: 1.75rem;
+  }
+}

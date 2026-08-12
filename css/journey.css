@@ -1,0 +1,56 @@
+/* ============================================
+   JOURNEY — Route Controller
+   Haryana Roadways · Liquid Glass
+   ============================================ */
+
+.journey__controller {
+  max-width: 700px;
+}
+
+.journey__route {
+  margin-top: var(--space-4);
+}
+
+.journey__svg {
+  width: 100%;
+  height: auto;
+}
+
+.journey__marker {
+  transition: cx var(--dur-slow) var(--ease-out);
+}
+
+.journey__marker-glow {
+  transition: cx var(--dur-slow) var(--ease-out);
+  animation: markerPulse 2s var(--ease-in-out) infinite;
+}
+
+@keyframes markerPulse {
+  0%, 100% { opacity: 0.3; r: 10; }
+  50%      { opacity: 0.5; r: 14; }
+}
+
+.journey__stop {
+  transition: fill var(--dur-normal) var(--ease-out), stroke var(--dur-normal) var(--ease-out);
+}
+
+.journey__stop.is-passed {
+  fill: var(--green-deep);
+  stroke: var(--green-muted);
+}
+
+.journey__progress-line {
+  transition: x2 var(--dur-slow) var(--ease-out);
+}
+
+@media (max-width: 768px) {
+  .journey__controller {
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 375px) {
+  .journey__svg text {
+    font-size: 9px;
+  }
+}

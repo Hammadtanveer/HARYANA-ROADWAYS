@@ -1,0 +1,28 @@
+/* ============================================
+   BUS — The Bus Section
+   Haryana Roadways · Liquid Glass
+   ============================================ */
+
+.bus-section {
+  min-height: 100vh;
+}
+
+.bus-section__bg img {
+  object-position: center 30%;
+}
+
+.bus-meta {
+  max-width: 220px;
+}
+
+.bus-meta__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .bus-meta {
+    max-width: 180px;
+  }
+}

@@ -1,0 +1,228 @@
+/* ============================================
+   NAV — Floating Glass Navigation Pill
+   Haryana Roadways · Liquid Glass
+   ============================================ */
+
+
+/* ── Nav Container ──────────────────────────── */
+
+.nav {
+  position: fixed;
+  top: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-nav);
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-1);
+  max-width: calc(100vw - var(--space-8));
+  /* Glass pill applied via .glass-pill class in HTML */
+  
+  /* Entrance animation */
+  opacity: 0;
+  animation: navEnter var(--dur-cinematic) var(--ease-out) 0.6s forwards;
+}
+
+@keyframes navEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+/* ── Nav Brand ──────────────────────────────── */
+
+.nav__brand {
+  font-family: var(--font-heading);
+  font-size: var(--type-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--white);
+  white-space: nowrap;
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  transition: color var(--dur-micro) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.nav__brand:hover {
+  color: var(--green-muted);
+}
+
+
+/* ── Nav Spacer ─────────────────────────────── */
+
+.nav__spacer {
+  flex: 1;
+  min-width: var(--space-6);
+}
+
+
+/* ── Nav Links ──────────────────────────────── */
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.nav__link {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--grey-300);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 
+    color var(--dur-micro) var(--ease-out),
+    background var(--dur-micro) var(--ease-out);
+}
+
+.nav__link:hover {
+  color: var(--white);
+  background: var(--glass-white-06);
+}
+
+.nav__link.is-active {
+  color: var(--white);
+}
+
+
+/* ── Active Section Indicator (green dot) ──── */
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--green-muted);
+  border-radius: var(--radius-round);
+  box-shadow: 0 0 8px var(--green-glow);
+}
+
+
+/* ── Menu Button ────────────────────────────── */
+
+.nav__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--grey-300);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  background: var(--glass-white-04);
+  border: 1px solid transparent;
+  transition: 
+    color var(--dur-micro) var(--ease-out),
+    background var(--dur-micro) var(--ease-out),
+    border-color var(--dur-micro) var(--ease-out);
+}
+
+.nav__menu-btn:hover {
+  color: var(--white);
+  background: var(--glass-white-08);
+  border-color: var(--glass-border);
+}
+
+
+/* ── Nav Scroll States ──────────────────────── 
+   JS toggles these classes based on scroll. */
+
+.nav--scrolled {
+  background: var(--glass-white-10);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+.nav--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-20px);
+  transition: 
+    opacity var(--dur-normal) var(--ease-out),
+    transform var(--dur-normal) var(--ease-out);
+}
+
+
+/* ── Responsive Nav ─────────────────────────── */
+
+@media (max-width: 768px) {
+  .nav {
+    top: var(--space-4);
+    padding: var(--space-2);
+    gap: 0;
+  }
+
+  .nav__brand {
+    font-size: var(--type-micro);
+    padding: var(--space-2) var(--space-3);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .nav__spacer {
+    min-width: var(--space-3);
+  }
+
+  .nav__links {
+    gap: 0;
+  }
+
+  /* Hide text links on mobile, keep menu button */
+  .nav__link--desktop {
+    display: none;
+  }
+
+  .nav__menu-btn {
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+@media (max-width: 375px) {
+  .nav {
+    top: var(--space-3);
+    left: var(--space-3);
+    right: var(--space-3);
+    transform: none;
+    max-width: none;
+  }
+
+  @keyframes navEnter {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav--hidden {
+    transform: translateY(-20px);
+  }
+
+  .nav__brand {
+    font-size: 0.6rem;
+  }
+}
