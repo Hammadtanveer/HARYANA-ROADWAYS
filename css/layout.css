@@ -254,9 +254,18 @@ body {
 .footer__content {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-8);
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    text-align: left;
+  }
 }
 
 .footer__wordmark {
